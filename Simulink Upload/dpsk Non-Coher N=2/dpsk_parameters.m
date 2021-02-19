@@ -1,10 +1,10 @@
 close all; clear all; clc;
 
 M = 2;
-phaseoffset = 0;
-snr = 13;
+phaseoffset = pi/2;
+snr = 10;
 samples = 1;
-stopTime = 1E4;
+stopTime = 1E5;
 stepSize = 1;
 
 img = sqrt(-1);
