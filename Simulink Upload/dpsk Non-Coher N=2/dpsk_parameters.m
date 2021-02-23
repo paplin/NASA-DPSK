@@ -1,10 +1,10 @@
 close all; clear all; clc;
 
-M = 4;
+M = 8;
 phaseoffset = 0; %Do not change phase offset
-snr = 12;
+snr = 16;
 samples = 1;
-stopTime = 1E5;
+stopTime = 5E5;
 stepSize = 1;
 
 img = sqrt(-1);
