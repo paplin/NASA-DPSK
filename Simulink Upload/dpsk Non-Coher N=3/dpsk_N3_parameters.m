@@ -1,11 +1,11 @@
 close all; clear all; clc;
 
-M = 4;
+M = 8;
 N = 3;
 phaseoffset = 0;
-snr = 300;
+snr = 200;
 samples = 1;
-stopTime = 1E4;
+stopTime = 1E2;
 stepSize = 1;
 
 indexCheck = pi/2;
@@ -24,8 +24,8 @@ for q = 1:size(angleConstel, 2)
             mainMat(1,r,q) = angleConstel(r);
             mainMat(2,r,q) = angleConstel(q) - mainMat(1,r,q);
             mainMat(3,r,q) = angleConstel(q);
-            preIndexMat(1,r,q) = mainMat(1,r,q)/(pi/2);
-            preIndexMat(2,r,q) = mod(mainMat(2,r,q),2*pi)*2/pi;
+            preIndexMat(1,r,q) = mainMat(1,r,q)/(pi/(M/2));
+            preIndexMat(2,r,q) = mod(mainMat(2,r,q),2*pi)/(pi/(M/2));
     end
 end
 
