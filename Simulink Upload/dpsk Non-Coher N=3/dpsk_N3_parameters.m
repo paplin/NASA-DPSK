@@ -3,12 +3,10 @@ close all; clear all; clc;
 M = 8;
 N = 3;
 phaseoffset = 0;
-snr = 200;
+snr = 16;
 samples = 1;
-stopTime = 1E2;
+stopTime = 1E6;
 stepSize = 1;
-
-indexCheck = pi/2;
 
 img = sqrt(-1);
 
@@ -17,7 +15,6 @@ for i = 1:M
 end
 
 angleConstel = mod(angle(bothDelTheta), 2*pi);
-
 
 for q = 1:size(angleConstel, 2)
     for r = 1:M
@@ -40,4 +37,3 @@ for in1 = 1:size(mainMat,1)
         end
     end
 end
-
