@@ -9,7 +9,7 @@ stepSize = 1;
 
 img = sqrt(-1);
 
-for i = 1:M+1
+for i = 1:M
     phaseConstel(i) = cos(2*pi*(i-1)/M +phaseoffset) + img*sin(2*pi*(i-1)/M +phaseoffset);
 end
 
@@ -20,3 +20,8 @@ for j = 1:size(angleConstel,2)
         angleConstel(j) = angleConstel(j) + (2*pi);
     end
 end
+
+
+%%%% Advanced AWGN Parameters %%%%%
+
+
