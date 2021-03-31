@@ -6,20 +6,20 @@ function SimParams = commqpsktxrx_init
 %% General simulation parameters
 SimParams.ModulationOrder = 2;      % QPSK alphabet size
 SimParams.Interpolation = 2;        % Interpolation factor
-SimParams.Decimation = 1;           % Decimation factor
+SimParams.Decimation = 2;           % Decimation factor
 SimParams.Rsym = 5e4;               % Symbol rate in Hertz
 SimParams.Tsym = 1/SimParams.Rsym;  % Symbol time in sec
 SimParams.Fs   = SimParams.Rsym * SimParams.Interpolation; % Sample rate
-SimParams.TotalFrame = 1000;        % Simulate 1000 frames in total
+SimParams.TotalFrame = 8;        % Simulate 1000 frames in total
 
 %% Frame Specifications
 % [BarkerCode*2 | 'Hello world 000\n' | 'Hello world 001\n' ...];
 SimParams.BarkerCode      = [+1 +1 +1 +1 +1 -1 -1 +1 +1 -1 +1 -1 +1];     % Bipolar Barker Code
 SimParams.BarkerLength    = length(SimParams.BarkerCode);
 SimParams.HeaderLength    = SimParams.BarkerLength;                   % Duplicate 2 Barker codes to be as a header
-SimParams.Message         = 'Hello world';
+SimParams.Message         = 'H';
 SimParams.MessageLength   = strlength(SimParams.Message) + 5;             % 'Hello world 000\n'...
-SimParams.NumberOfMessage = 20;                                           % Number of messages in a frame 20
+SimParams.NumberOfMessage = 1;                                           % Number of messages in a frame 20
 SimParams.PayloadLength   = SimParams.NumberOfMessage * SimParams.MessageLength * 7; % 7 bits per characters
 SimParams.FrameSize       = (SimParams.HeaderLength + SimParams.PayloadLength) ...
     / log2(SimParams.ModulationOrder);                                    % Frame size in symbols
